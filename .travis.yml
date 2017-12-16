@@ -1,9 +1,6 @@
 language: objective-c
 osx_image: xcode9.2
 xcode_workspace: DHKit/DHKit.xcworkspace
-xcode_scheme: DHKit
-profile: DHKit/Podfile
+xcode_schemes: DHKit
 
-script: 
-- xctool -workspace DHKit.xcworkspace.xcworkspace -scheme DHKit -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
-- xctool test -workspace DHKit.xcworkspace.xcworkspace -scheme DHKitTests -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+profile: DHKit/Podfile
