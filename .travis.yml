@@ -1,6 +1,6 @@
 language: objective-c
 osx_image: xcode9
-xcode_workspace: DHKik/DHKik.xcworkspace
+xcode_workspace: DHKit/DHKit.xcworkspace
 xcode_scheme: DHKit
 
 profile: DHKik/Podfile
