@@ -35,7 +35,7 @@
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
-            buildForTesting = "YES"
+            buildForTesting = "NO"
             buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
@@ -162,16 +162,6 @@
                BlueprintIdentifier = "6951677F1FE53C6200221194"
                BuildableName = "DHKitTests.xctest"
                BlueprintName = "DHKitTests"
-               ReferencedContainer = "container:DHKit.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6951678A1FE53C6200221194"
-               BuildableName = "DHKitUITests.xctest"
-               BlueprintName = "DHKitUITests"
                ReferencedContainer = "container:DHKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
