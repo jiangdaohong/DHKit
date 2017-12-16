@@ -3,4 +3,4 @@ osx_image: xcode9
 xcode_workspace: DHKit/DHKit.xcworkspace
 xcode_scheme: DHKit
 
-profile: DHKik/Podfile
+profile: DHKit/Podfile
