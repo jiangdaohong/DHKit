@@ -9,7 +9,7 @@
 #import "RootViewController.h"
 
 @interface RootViewController ()
-
+@property (nonatomic, strong) NSArray *list;
 @end
 
 @implementation RootViewController
@@ -17,21 +17,44 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self configureUI];
+    [self testDate];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void)configureUI {
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    self.tableView.tableFooterView = [UIView new];
+    self.title = @"DHKit";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)testDate {
+    
+    NSMutableArray *mAry = [NSMutableArray array];
+    for (NSInteger i = 0; i < 10; i++) {
+        [mAry addObject:@(i).stringValue];
+    }
+    _list = [NSArray arrayWithArray:mAry];
 }
-*/
+
+#pragma mark - table view delegete & datasource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return _list.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    static NSString *identifier = @"identifier";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:identifier];
+    }
+    cell.textLabel.text = _list[indexPath.row];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 
 @end
